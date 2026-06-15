@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Qentro | Modern E-Commerce</title>
+    <!-- Google Fonts & Simple CSS Reset -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafaf8;
+            color: #1a1e24;
+            scroll-behavior: smooth;
+            line-height: 1.4;
+        }
+
+        /* container utility */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* header / nav */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #1F2A3A 0%, #2C3E4E 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .logo span {
+            color: #D4AF37;
+            background: none;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #2c3e2f;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #D4AF37;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 1.2rem;
+        }
+
+        .nav-icons svg {
+            width: 22px;
+            height: 22px;
+            stroke: #2c3e2f;
+            stroke-width: 1.5;
+            fill: none;
+            cursor: pointer;
+            transition: stroke 0.2s;
+        }
+
+        .nav-icons svg:hover {
+            stroke: #D4AF37;
+        }
+
+        /* Hero section with big image */
+        .hero {
+            margin: 40px 0 60px 0;
+            border-radius: 32px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+            border-radius: 32px;
+            transition: transform 0.4s ease;
+        }
+
+        .hero-content {
+            position: absolute;
+            bottom: 10%;
+            left: 8%;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(6px);
+            padding: 1.6rem 2.2rem;
+            border-radius: 24px;
+            max-width: 380px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+        }
+
+        .hero-content h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-content p {
+            margin-bottom: 1.2rem;
+            color: #2c3e2f;
+        }
+
+        .btn-primary {
+            background: #1F2A3A;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-block;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary:hover {
+            background: #D4AF37;
+            color: #1a1e24;
+            transform: scale(0.98);
+        }
+
+        /* section heading */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 50px 0 30px 0;
+            letter-spacing: -0.01em;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #D4AF37;
+            border-radius: 4px;
+        }
+
+        /* product grid with different images */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 2rem;
+            margin: 30px 0 50px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.25s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+            border: 1px solid #efefef;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 35px -12px rgba(0, 0, 0, 0.12);
+            border-color: #e0ddd5;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .product-img {
+            transform: scale(1.02);
+        }
+
+        .product-info {
+            padding: 1.2rem 1rem 1.5rem;
+        }
+
+        .product-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .product-category {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            letter-spacing: 0.3px;
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #1F2A3A;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #aaa;
+            font-size: 0.85rem;
+            margin-left: 8px;
+            font-weight: 400;
+        }
+
+        /* category banner with image */
+        .category-showcase {
+            display: flex;
+            gap: 30px;
+            margin: 60px 0;
+            flex-wrap: wrap;
+        }
+
+        .cat-card {
+            flex: 1;
+            min-width: 220px;
+            border-radius: 28px;
+            overflow: hidden;
+            position: relative;
+            background: #f3f3ef;
+        }
+
+        .cat-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .cat-card:hover img {
+            transform: scale(1.03);
+        }
+
+        .cat-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+            padding: 1.5rem;
+            color: white;
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+
+        /* testimonials / lifestyle */
+        .featured-story {
+            display: flex;
+            background: #fff7ed;
+            border-radius: 32px;
+            margin: 50px 0;
+            overflow: hidden;
+            flex-wrap: wrap;
+        }
+
+        .story-img {
+            flex: 1.2;
+            min-width: 250px;
+        }
+
+        .story-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .story-text {
+            flex: 1;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .story-text h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .story-text p {
+            color: #4a5b4e;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        /* newsletter */
+        .newsletter {
+            background: #1F2A3A;
+            border-radius: 32px;
+            padding: 3rem 2rem;
+            margin: 60px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .newsletter h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .newsletter p {
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .news-form {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .news-form input {
+            padding: 14px 20px;
+            border-radius: 60px;
+            border: none;
+            width: 280px;
+            font-family: inherit;
+        }
+
+        .news-form button {
+            background: #D4AF37;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 60px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        /* footer */
+        footer {
+            border-top: 1px solid #e2e2e2;
+            padding: 40px 0 30px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-col p {
+            color: #5d6e5d;
+            margin-top: 8px;
+        }
+
+        /* responsive */
+        @media (max-width: 800px) {
+            .container {
+                padding: 0 20px;
+            }
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero-content {
+                position: relative;
+                left: 0;
+                bottom: 0;
+                margin: 20px;
+                width: auto;
+                background: rgba(255,255,240,0.95);
+            }
+            .hero-image {
+                height: 350px;
+            }
+            .hero {
+                margin: 20px 0;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NTV0NLN2X5"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-NTV0NLN2X5');
+</script>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header & Navigation -->
+    <header>
+        <div class="navbar">
+            <div class="logo">QENTRO<span>.</span></div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="about.html">About Us</a>
+            </div>
+            <div class="nav-icons">
+                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                </svg>
+                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1" />
+                    <circle cx="20" cy="21" r="1" />
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero section with large image -->
+    <div class="hero">
+        <img class="hero-image" src="https://picsum.photos/id/20/1400/600" alt="Qentro lifestyle hero" 
+        srcset="https://picsum.photos/id/20/1400/600 1x, https://picsum.photos/id/20/2000/800 2x">
+        <div class="hero-content">
+            <h2>Beyond the ordinary</h2>
+            <p>Minimalist essentials, crafted for modern life. Discover Qentro's new season.</p>
+            <a href="#" class="btn-primary">Shop Now →</a>
+        </div>
+    </div>
+
+    <!-- Featured products with different images (diverse unsplash/picsum) -->
+    <div>
+        <h2 class="section-title">Bestsellers</h2>
+        <div class="product-grid">
+            <!-- product 1 -->
+            <div class="product-card">
+                <img class="product-img" src="https://picsum.photos/id/26/400/500" alt="Urban backpack">
+                <div class="product-info">
+                    <div class="product-title">Axis Backpack</div>
+                    <div class="product-category">Bags / Tech</div>
+                    <div class="price">$89 <span class="old-price">$129</span></div>
+                </div>
+            </div>
+            <!-- product 2 -->
+            <div class="product-card">
+                <img class="product-img" src="https://picsum.photos/id/30/400/500" alt="Minimalist watch">
+                <div class="product-info">
+                    <div class="product-title">Chrono Slim</div>
+                    <div class="product-category">Accessories</div>
+                    <div class="price">$145</div>
+                </div>
+            </div>
+            <!-- product 3 -->
+            <div class="product-card">
+                <img class="product-img" src="https://picsum.photos/id/0/400/500" alt="Elegant notebook">
+                <div class="product-info">
+                    <div class="product-title">A5 Folio Journal</div>
+                    <div class="product-category">Stationery</div>
+                    <div class="price">$34</div>
+                </div>
+            </div>
+            <!-- product 4 -->
+            <div class="product-card">
+                <img class="product-img" src="https://picsum.photos/id/1/400/500" alt="Laptop sleeve">
+                <div class="product-info">
+                    <div class="product-title">Canvas Sleeve</div>
+                    <div class="product-category">Tech</div>
+                    <div class="price">$49</div>
+                </div>
+            </div>
+            <!-- product 5 extra variety -->
+            <div class="product-card">
+                <img class="product-img" src="https://picsum.photos/id/15/400/500" alt="desk pen">
+                <div class="product-info">
+                    <div class="product-title">Ora Pen Set</div>
+                    <div class="product-category">Writing</div>
+                    <div class="price">$28</div>
+                </div>
+            </div>
+            <!-- product 6 -->
+            <div class="product-card">
+                <img class="product-img" src="https://picsum.photos/id/43/400/500" alt="sunglasses">
+                <div class="product-info">
+                    <div class="product-title">Solo Shades</div>
+                    <div class="product-category">Eyewear</div>
+                    <div class="price">$120 <span class="old-price">$159</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category images: different vibes -->
+    <div>
+        <h2 class="section-title">Shop by Vibe</h2>
+        <div class="category-showcase">
+            <div class="cat-card">
+                <img src="https://picsum.photos/id/36/500/400" alt="Outdoor collection">
+                <div class="cat-overlay">Outdoor</div>
+            </div>
+            <div class="cat-card">
+                <img src="https://picsum.photos/id/169/500/400" alt="Home living">
+                <div class="cat-overlay">Living</div>
+            </div>
+            <div class="cat-card">
+                <img src="https://picsum.photos/id/58/500/400" alt="Work essentials">
+                <div class="cat-overlay">Workspace</div>
+            </div>
+            <div class="cat-card">
+                <img src="https://picsum.photos/id/91/500/400" alt="Travel gear">
+                <div class="cat-overlay">Travel</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lifestyle / story block with distinct image -->
+    <div class="featured-story">
+        <div class="story-img">
+            <img src="https://picsum.photos/id/96/700/500" alt="Qentro lifestyle studio">
+        </div>
+        <div class="story-text">
+            <h3>Designed for movement</h3>
+            <p>Every stitch, every material — Qentro represents the harmony between aesthetics and purpose. Our community thrives on thoughtful design that adapts to daily rituals.</p>
+            <a href="#" class="btn-primary" style="background:#D4AF37; color:#1F2A3A;">Explore the collection →</a>
+        </div>
+    </div>
+
+    <!-- Another different image block: featured product row -->
+    <div class="featured-story" style="background: #F5F2EA; flex-direction: row-reverse;">
+        <div class="story-img">
+            <img src="https://picsum.photos/id/155/700/500" alt="Minimalist desk setup">
+        </div>
+        <div class="story-text">
+            <h3>From studio to street</h3>
+            <p>Limited edition modular bags and tools that blend with urban rhythm. Lightweight, durable, and uniquely Qentro.</p>
+            <a href="#" class="btn-primary">Discover Drops →</a>
+        </div>
+    </div>
+
+    <!-- Newsletter & final CTA -->
+    <div class="newsletter">
+        <h3>Join the collective</h3>
+        <p>Sign up for early access, first looks and exclusive Qentro releases.</p>
+        <div class="news-form">
+            <input type="email" placeholder="Your email address">
+            <button class="btn-primary" style="background:#D4AF37; color:#1F2A3A;">Subscribe</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-col">
+            <div class="logo" style="font-size: 1.4rem;">QENTRO<span>.</span></div>
+            <p>Essentials for the modern seeker</p>
+        </div>
+        <div class="footer-col">
+            <strong>Shop</strong><br>
+            <p>New In<br>Bestsellers<br>Accessories</p>
+        </div>
+        <div class="footer-col">
+            <strong>Support</strong><br>
+            <p>FAQ<br>Returns<br>Contact</p>
+        </div>
+        <div class="footer-col">
+            <strong>Connect</strong><br>
+            <p>Instagram<br>Twitter<br>Journal</p>
+        </div>
+    </footer>
+</div>
+
+<!-- micro interaction script for newsletter demo only, no backend -->
+<script>
+    // simple non-intrusive alert for subscribe demo
+    const subscribeBtn = document.querySelector('.news-form button');
+    const emailInput = document.querySelector('.news-form input');
+    if (subscribeBtn) {
+        subscribeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const email = emailInput.value.trim();
+            if (email === "" || !email.includes('@')) {
+                alert("Please enter a valid email to join Qentro's list.");
+            } else {
+                alert(`Thanks ${email}! You're now part of Qentro collective.`);
+                emailInput.value = '';
+            }
+        });
+    }
+    // simple hover effect on product images ready (purely visual)
+    console.log("Qentro home page ready — diverse images included");
+</script>
+</body>
+</html>

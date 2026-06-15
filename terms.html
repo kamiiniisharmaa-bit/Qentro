@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Qentro | Terms & Conditions</title>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafaf8;
+            color: #1a1e24;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* header / nav (mirror main site style) */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #1F2A3A 0%, #2C3E4E 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .logo span {
+            color: #D4AF37;
+            background: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #2c3e2f;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #D4AF37;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 1.2rem;
+        }
+
+        .nav-icons svg {
+            width: 22px;
+            height: 22px;
+            stroke: #2c3e2f;
+            stroke-width: 1.5;
+            fill: none;
+            cursor: pointer;
+        }
+
+        /* terms hero */
+        .terms-hero {
+            background: linear-gradient(105deg, #F5F2EA 0%, #FFFFFF 100%);
+            border-radius: 32px;
+            padding: 3rem 2.5rem;
+            margin: 40px 0 30px 0;
+        }
+
+        .terms-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .terms-hero p {
+            color: #4b5a4b;
+            max-width: 700px;
+        }
+
+        .last-updated {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #8b9a6e;
+            border-left: 3px solid #D4AF37;
+            padding-left: 1rem;
+        }
+
+        /* terms content layout */
+        .terms-grid {
+            display: flex;
+            gap: 3rem;
+            margin: 30px 0 80px;
+            flex-wrap: wrap;
+        }
+
+        .sidebar {
+            flex: 0 0 260px;
+            position: sticky;
+            top: 30px;
+            align-self: start;
+            background: #ffffffdd;
+            backdrop-filter: blur(2px);
+            border-radius: 28px;
+            padding: 1.5rem 1rem;
+            border: 1px solid #eae6df;
+        }
+
+        .sidebar h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            margin-bottom: 0.8rem;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #3f4b3a;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+            display: inline-block;
+        }
+
+        .sidebar a:hover {
+            color: #D4AF37;
+            transform: translateX(4px);
+        }
+
+        .terms-content {
+            flex: 1;
+            background: white;
+            border-radius: 32px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.02);
+            border: 1px solid #efede8;
+        }
+
+        .terms-section {
+            margin-bottom: 2.5rem;
+            scroll-margin-top: 90px;
+        }
+
+        .terms-section h2 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #f0ede5;
+        }
+
+        .terms-section h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1.2rem 0 0.6rem;
+            color: #2c3e2f;
+        }
+
+        .terms-section p {
+            margin-bottom: 1rem;
+            color: #2c3e2f;
+        }
+
+        .terms-section ul, .terms-section ol {
+            margin: 0.8rem 0 1rem 1.8rem;
+            color: #3e5540;
+        }
+
+        .terms-section li {
+            margin-bottom: 0.4rem;
+        }
+
+        .highlight {
+            background: #FEF5E7;
+            padding: 1rem 1.5rem;
+            border-radius: 20px;
+            border-left: 4px solid #D4AF37;
+            margin: 1.5rem 0;
+        }
+
+        hr {
+            margin: 2rem 0;
+            border: none;
+            height: 1px;
+            background: #e9e5dd;
+        }
+
+        /* footer */
+        footer {
+            border-top: 1px solid #e2e2e2;
+            padding: 40px 0 30px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-col p {
+            color: #5d6e5d;
+            margin-top: 8px;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: none;
+            border: 1px solid #dad3c6;
+            padding: 10px 24px;
+            border-radius: 60px;
+            font-weight: 500;
+            text-decoration: none;
+            color: #2c3e2f;
+            margin-top: 1rem;
+            transition: 0.2s;
+        }
+
+        .btn-back:hover {
+            background: #1F2A3A;
+            color: white;
+            border-color: #1F2A3A;
+        }
+
+        @media (max-width: 800px) {
+            .container {
+                padding: 0 20px;
+            }
+            .sidebar {
+                flex: auto;
+                position: relative;
+                top: 0;
+                width: 100%;
+            }
+            .terms-grid {
+                flex-direction: column;
+            }
+            .terms-hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Header identical to main site branding -->
+    <header>
+        <div class="navbar">
+            <div class="logo">QENTRO<span>.</span></div>
+            <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+            </div>
+            <div class="nav-icons">
+                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                </svg>
+                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1" />
+                    <circle cx="20" cy="21" r="1" />
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Terms Hero -->
+    <div class="terms-hero">
+        <h1>Terms & Conditions</h1>
+        <p>Welcome to Qentro. These terms govern your use of our website, purchases, and community engagement. By accessing Qentro, you agree to the following conditions.</p>
+        <div class="last-updated">Last updated: June 12, 2026</div>
+    </div>
+
+    <!-- Main Terms Area with sticky sidebar -->
+    <div class="terms-grid">
+        <aside class="sidebar">
+            <h4>On this page</h4>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#account">Account & Registration</a></li>
+                <li><a href="#purchases">Orders & Payments</a></li>
+                <li><a href="#shipping">Shipping & Delivery</a></li>
+                <li><a href="#returns">Returns & Refunds</a></li>
+                <li><a href="#intellectual">Intellectual Property</a></li>
+                <li><a href="#limitations">Limitation of Liability</a></li>
+                <li><a href="#privacy">Privacy & Data</a></li>
+                <li><a href="#governing">Governing Law</a></li>
+                <li><a href="#changes">Changes to Terms</a></li>
+            </ul>
+            <a href="#" class="btn-back" style="margin-top: 2rem; display: inline-flex;">← Back to Shop</a>
+        </aside>
+
+        <div class="terms-content">
+            <!-- Introduction -->
+            <section id="introduction" class="terms-section">
+                <h2>1. Introduction</h2>
+                <p>These Terms and Conditions ("Terms") apply to the entire Qentro ecosystem, including our website (qentro.com), mobile services, and any related interactions. Qentro (referred to as "we," "us," or "our") offers premium lifestyle goods, accessories, and original designs. By browsing, creating an account, or purchasing any product, you confirm that you have read, understood, and agree to be bound by these Terms.</p>
+                <div class="highlight">
+                    ⚡ Please read carefully – these Terms contain important information about your rights, limitations, and dispute resolution.
+                </div>
+            </section>
+
+            <!-- Account -->
+            <section id="account" class="terms-section">
+                <h2>2. Account & Registration</h2>
+                <p>To access certain features (like wishlists, order history, or exclusive drops), you may create a Qentro account. You are responsible for maintaining confidentiality of your login credentials. You agree to provide accurate, current, and complete information. Qentro reserves the right to suspend or terminate any account that violates these Terms or applicable laws.</p>
+                <ul>
+                    <li><strong>Age requirement:</strong> You must be at least 18 years old or have parental consent to make purchases.</li>
+                    <li><strong>Account security:</strong> Notify us immediately of any unauthorized use. Qentro is not liable for losses due to stolen credentials.</li>
+                    <li><strong>Right to refuse service:</strong> We may refuse, cancel orders, or disable accounts at our discretion.</li>
+                </ul>
+            </section>
+
+            <!-- Purchases & Payment -->
+            <section id="purchases" class="terms-section">
+                <h2>3. Orders & Payments</h2>
+                <p>All orders placed through Qentro are subject to product availability and price confirmation. We accept major credit cards, digital wallets, and other secure payment methods displayed at checkout. By submitting an order, you represent that the payment information is valid and you are authorized to use it.</p>
+                <h3>Pricing & Taxes</h3>
+                <p>Prices are listed in USD (or local currency where applicable) and exclude applicable taxes and shipping fees unless stated otherwise. Qentro reserves the right to adjust prices or promotions at any time, but such changes will not affect confirmed orders.</p>
+                <h3>Order Acceptance</h3>
+                <p>After placing an order, you will receive an acknowledgment email. This does not constitute acceptance – we may cancel any order due to inventory errors, payment issues, or suspected fraud. If we cancel after charging, you’ll receive a full refund.</p>
+            </section>
+
+            <!-- Shipping & Delivery -->
+            <section id="shipping" class="terms-section">
+                <h2>4. Shipping & Delivery</h2>
+                <p>We ship to most regions worldwide. Estimated delivery times are provided at checkout but are not guaranteed. Qentro is not responsible for delays caused by carriers, customs clearance, or force majeure events. Risk of loss passes to you upon delivery handover. For international shipments, you are responsible for any import duties or taxes.</p>
+            </section>
+
+            <!-- Returns & Refunds -->
+            <section id="returns" class="terms-section">
+                <h2>5. Returns & Refunds</h2>
+                <p>We want you to love your Qentro pieces. If you are not entirely satisfied, you may request a return within 30 days of delivery for eligible items. Products must be unused, in original packaging, and with all tags attached. Final sale items, custom pieces, and certain accessories may not be returnable (clearly indicated on product page).</p>
+                <ul>
+                    <li><strong>Refund process:</strong> After inspection, we will issue a refund to original payment method within 14 business days. Shipping charges are non-refundable.</li>
+                    <li><strong>Exchanges:</strong> For faster service, please return the original item and place a new order.</li>
+                    <li><strong>Warranty:</strong> Qentro offers a 1-year warranty against manufacturing defects for non-accessory items. Contact our support team to initiate a claim.</li>
+                </ul>
+            </section>
+
+            <!-- Intellectual Property -->
+            <section id="intellectual" class="terms-section">
+                <h2>6. Intellectual Property</h2>
+                <p>All content on the Qentro website – including but not limited to logos, product designs, photography, typography, graphics, and text – is the exclusive property of Qentro or its licensors. You may not reproduce, distribute, modify, or create derivative works without our prior written consent. The Qentro name and logo are registered trademarks protected by international laws.</p>
+                <div class="highlight">
+                    🛡️ Unauthorized use of our product imagery or branding may result in legal action. We love collaborations – reach out for licensing inquiries.
+                </div>
+            </section>
+
+            <!-- Limitations of Liability -->
+            <section id="limitations" class="terms-section">
+                <h2>7. Limitation of Liability</h2>
+                <p>To the maximum extent permitted by law, Qentro and its affiliates shall not be liable for any indirect, incidental, or consequential damages arising from the use of our products or website, including loss of profits, data, or goodwill. Our total liability for any claim related to purchase shall not exceed the amount paid for the product in question. Some jurisdictions do not allow certain exclusions, so these limitations may not apply to you.</p>
+            </section>
+
+            <!-- Privacy Data -->
+            <section id="privacy" class="terms-section">
+                <h2>8. Privacy & Data Protection</h2>
+                <p>Your privacy is fundamental. Our Privacy Policy outlines how we collect, use, and protect your personal data. By using Qentro, you consent to data practices described therein. We use secure encryption and never sell your personal information. For full details, please review our separate <a href="#" style="color:#D4AF37;">Privacy Policy</a>.</p>
+            </section>
+
+            <!-- Governing Law -->
+            <section id="governing" class="terms-section">
+                <h2>9. Governing Law & Disputes</h2>
+                <p>These Terms shall be governed by and construed in accordance with the laws of the State of California, without regard to conflict of laws principles. Any dispute arising out of or relating to these Terms or your use of Qentro shall be resolved through binding arbitration in San Francisco, CA, unless you opt out within 30 days of first acceptance. Small claims actions may be brought instead of arbitration at your election.</p>
+            </section>
+
+            <!-- Changes to Terms -->
+            <section id="changes" class="terms-section">
+                <h2>10. Modifications to Terms</h2>
+                <p>Qentro may update these Terms periodically to reflect legal, operational, or product changes. The "Last updated" date indicates the latest revision. Material changes will be notified via website banner or email. Your continued use after modifications constitutes acceptance of the revised Terms. It is your responsibility to review this page regularly.</p>
+                <hr>
+                <p style="font-size: 0.9rem;">If you have any questions regarding these Terms, please contact our legal team at <strong>legal@qentro.com</strong> or reach out via our customer support.</p>
+            </section>
+        </div>
+    </div>
+
+    <!-- footer consistent with main brand -->
+    <footer>
+        <div class="footer-col">
+            <div class="logo" style="font-size: 1.4rem;">QENTRO<span>.</span></div>
+            <p>Essentials for the modern seeker</p>
+        </div>
+        <div class="footer-col">
+            <strong>Shop</strong><br>
+            <p>New In<br>Bestsellers<br>Accessories</p>
+        </div>
+        <div class="footer-col">
+            <strong>Support</strong><br>
+            <p>FAQ<br>Returns<br>Contact</p>
+        </div>
+        <div class="footer-col">
+            <strong>Connect</strong><br>
+            <p>Instagram<br>Twitter<br>Journal</p>
+        </div>
+    </footer>
+</div>
+
+<!-- Smooth scroll for anchor links and active state simple effect -->
+<script>
+    document.querySelectorAll('.sidebar a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId && targetId !== '#') {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // update small highlight effect
+                    document.querySelectorAll('.terms-section').forEach(section => section.style.transition = '0.2s');
+                }
+            }
+        });
+    });
+
+    // optional back to shop simulation (just demo)
+    const backBtn = document.querySelector('.btn-back');
+    if (backBtn) {
+        backBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Returning to Qentro Shop (homepage) — immersive experience.');
+            // In a full site, you would redirect to index. For demo purposes.
+            window.location.href = '#'; // placeholder, but user can click homepage manually
+        });
+    }
+</script>
+</body>
+</html>
